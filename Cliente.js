@@ -1,3 +1,11 @@
+/*************************************************************************
+ *  Execution: nodejs Client.js
+ *
+ *  Author: Semproms
+ *
+ *************************************************************************/
+
+
 var net = require('net');
 var readline = require('readline');
 var rl = readline.createInterface(process.stdin, process.stdout);
@@ -6,9 +14,7 @@ var nick;
 var PORT = 9000;
 var HOST = '127.0.0.1';
 
-//var serv = require('./Servidor');
 
-// The server is in our same machine.
 var client = net.connect(PORT,HOST,function() {
 	console.log('Client connected');
 	rl.question("What is your name? ", function(answer) {
@@ -16,7 +22,6 @@ var client = net.connect(PORT,HOST,function() {
     	var msg = nick + " has joined to the chat";
     	console_out('Welcome, '+nick);
     	console_out('If you need help, type the command /help');
-    	//var reg = "/"+nick;
     	client.write(msg+"\n");
     	rl.setPrompt(nick+"> ", nick.length+2);
     	rl.prompt(true);
