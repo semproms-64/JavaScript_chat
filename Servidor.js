@@ -12,6 +12,12 @@ var dirIP;
 var port = 9000;
 
 net.createServer(function(socket){
+  const prueba = 25;
+  console.log(prueba)
+  /**
+   * 
+   */
+
  
 	socket.name = socket.remoteAddress + ":" + socket.remotePort;
 	clients.push(socket);
